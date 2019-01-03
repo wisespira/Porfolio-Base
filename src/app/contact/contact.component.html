@@ -1,0 +1,34 @@
+<body>
+      <div class="backshape" [@toggleState]="shouldToggle">
+            <div class="wrapper">
+                  <div>
+                        <div>
+                              <div>
+                                    <h1 (click)="toggle()">{{ toggleText }}</h1>
+                                    <span></span>
+                              </div>
+                        </div>
+                        <div>
+                              <img onclick="window.open('http://www.github.com/anthonykrivonos')" class="github"/>
+                              <img onclick="window.open('http://www.linkedin.com/in/anthonykrivonos')" class="linkedin"/>
+                        </div>
+                        <p id="fields">
+                              <input autocomplete="off" type="text" name="name" class="name" placeholder="Full Name"/>
+                              <input autocomplete="off" type="email" name="email" placeholder="Email"/>
+                              <select name="subject" value="3">
+                                    <option selected="selected" disabled>Subject &#160;❭</option>
+                                    <option>General Question &#160;❭</option>
+                                    <option>Business Proposal &#160;❭</option>
+                                    <option>Freelance Web Development Inquiry &#160;❭</option>
+                                    <option>Freelance App Development Inquiry &#160;❭</option>
+                                    <option>Job Recruitment &#160;❭</option>
+                                    <option>Other &#160;❭</option>
+                              </select>
+                              <textarea autocomplete="off" id="contentblock" rows="4" cols="50" maxlength="200"></textarea>
+                              <button *ngIf="!isValid" (click)="sendMail()" class="send invalid">Complete All Fields to Send</button>
+                              <button *ngIf="isValid" (click)="sendMail()" class="send">Send</button>
+                        </p>
+                  </div>
+            </div>
+      </div>
+</body>

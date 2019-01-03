@@ -1,0 +1,14 @@
+<body>
+      <div>
+            <h1>Proficiencies</h1>
+            <span></span>
+      </div>
+      <div>
+            <app-proficiency *ngFor="let item of items; let i = index"
+                  [body] = "item.body"
+                  [src] = "item.src"
+                  [title] = "item.title"
+                  [idx] = "i"
+            ></app-proficiency>
+      </div>
+</body>
